@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/yumaojun03/dmidecode/smbios"
+	"github.com/yyf330/dmidecode/smbios"
 )
 
 // Parse 解析smbios struct数据
@@ -26,9 +26,9 @@ func Parse(s *smbios.Structure) (*Information, error) {
 
 // UUID 主板uuid
 func uuid(data []byte, ver string) string {
-	if bytes.Index(data, []byte{0x00}) != -1 {
-		return "Not present"
-	}
+	//if bytes.Index(data, []byte{0x00}) != -1 {
+	//	return "Not present"
+	//}
 
 	if bytes.Index(data, []byte{0xFF}) != -1 {
 		return "Not settable"

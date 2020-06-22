@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/yumaojun03/dmidecode/smbios"
+	"github.com/yyf330/dmidecode/smbios"
 )
 
 func TestRead(t *testing.T) {

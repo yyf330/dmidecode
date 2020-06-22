@@ -3,7 +3,7 @@ package slot
 import (
 	"fmt"
 
-	"github.com/yumaojun03/dmidecode/smbios"
+	"github.com/yyf330/dmidecode/smbios"
 )
 
 // SystemSlot todo

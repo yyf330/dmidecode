@@ -1,7 +1,7 @@
 package port
 
 import (
-	"github.com/yumaojun03/dmidecode/smbios"
+	"github.com/yyf330/dmidecode/smbios"
 )
 
 // Parse 解析port信息

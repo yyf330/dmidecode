@@ -1,6 +1,6 @@
 MAIN_FILE := "cmd/main.go"
 PROJECT_NAME := "dmidecode"
-PKG := "github.com/yumaojun03/$(PROJECT_NAME)"
+PKG := "github.com/yyf330/$(PROJECT_NAME)"
 PKG_LIST := $(shell go list ${PKG}/... | grep -v /vendor/ | grep -v smbios)
 GO_FILES := $(shell find . -name '*.go' | grep -v /vendor/ | grep -v _test.go)
 
@@ -21,7 +21,7 @@ test: ## Run unittests
 	@go test -short ${PKG_LIST}
 
 test-coverage: ## Run tests with coverage
-	@go test -short -coverprofile cover.out -covermode=atomic ${PKG_LIST} 
+	@go test -short -coverprofile cover.out -covermode=atomic ${PKG_LIST}
 	@cat cover.out >> coverage.txt
 
 build: dep ## Build the binary file
