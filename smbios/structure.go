@@ -52,7 +52,7 @@ func (s *Structure) Type() uint8 {
 // ReadStructures 读取smbios结构数据
 func ReadStructures() ([]*Structure, error) {
 	// Find SMBIOS data in operating system-specific location.
-	rc, ep, err := smbios.Stream()
+	rc, _, err := smbios.Stream()
 	if err != nil {
 		return nil, fmt.Errorf("failed to open stream: %v", err)
 	}
@@ -67,11 +67,11 @@ func ReadStructures() ([]*Structure, error) {
 	}
 
 	// Determine SMBIOS version and table location from entry point.
-	major, minor, rev := ep.Version()
-	addr, size := ep.Table()
+	//major, minor, rev := ep.Version()
+	//addr, size := ep.Table()
 
-	fmt.Printf("SMBIOS %d.%d.%d - table: address: %#x, size: %d\n",
-		major, minor, rev, addr, size)
+	//fmt.Printf("SMBIOS %d.%d.%d - table: address: %#x, size: %d\n",
+	//	major, minor, rev, addr, size)
 
 	data := convertNative(ss)
 	return data, nil
