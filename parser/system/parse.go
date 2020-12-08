@@ -1,7 +1,6 @@
 package system
 
 import (
-	"bytes"
 	"fmt"
 
 	"github.com/yyf330/dmidecode/smbios"
@@ -30,9 +29,9 @@ func uuid(data []byte, ver string) string {
 	//	return "Not present"
 	//}
 
-	if bytes.Index(data, []byte{0xFF}) != -1 {
-		return "Not settable"
-	}
+	//if bytes.Index(data, []byte{0xFF}) != -1 {
+	//	return "Not settable"
+	//}
 
 	if ver > "2.6" {
 		return fmt.Sprintf("%02X%02X%02X%02X-%02X%02X-%02X%02X-%02X%02X-%02X%02X%02X%02X%02X%02X",
