@@ -31,9 +31,11 @@ func ParseProcessor(s *smbios.Structure) (*Processor, error) {
 		CoreEnabled:     data[0x20],
 		ThreadCount:     data[0x21],
 		Characteristics: ProcessorCharacteristics(smbios.U16(data[0x22:0x24])),
-		Family2:         ProcessorFamily(data[0x24]),
+		//Family2:         ProcessorFamily(data[0x24]),
 	}
-
+	if len(data) >= 0x24 {
+		p.Family2 = ProcessorFamily(data[0x24])
+	}
 	return p, nil
 }
 
