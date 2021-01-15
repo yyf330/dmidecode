@@ -25,19 +25,19 @@ func ParseMemoryDevice(s *smbios.Structure) (*MemoryDevice, error) {
 		SerialNumber:               s.GetString(0x14),
 		PartNumber:                 s.GetString(0x16),
 		Attributes:                 data[0x17],
-		ExtendedSize:               smbios.U32(data[0x18:0x1c]),
-		ConfiguredMemoryClockSpeed: smbios.U16(data[0x1c:0x1e]),
+		//ExtendedSize:               smbios.U32(data[0x18:0x1c]),
+		//ConfiguredMemoryClockSpeed: smbios.U16(data[0x1c:0x1e]),
 	}
 
-	if s.IsOverFlow(0x21) {
-		md.MinimumVoltage = smbios.U16(data[0x1e:0x20])
-	}
-	if s.IsOverFlow(0x23) {
-		md.MaximumVoltage = smbios.U16(data[0x20:0x22])
-	}
-	if s.IsOverFlow(0x25) {
-		md.ConfiguredVoltage = smbios.U16(data[0x22:0x24])
-	}
+	//if s.IsOverFlow(0x21) {
+	//	md.MinimumVoltage = smbios.U16(data[0x1e:0x20])
+	//}
+	//if s.IsOverFlow(0x23) {
+	//	md.MaximumVoltage = smbios.U16(data[0x20:0x22])
+	//}
+	//if s.IsOverFlow(0x25) {
+	//	md.ConfiguredVoltage = smbios.U16(data[0x22:0x24])
+	//}
 
 	return md, nil
 }
